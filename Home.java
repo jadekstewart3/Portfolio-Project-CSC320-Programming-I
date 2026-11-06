@@ -50,4 +50,23 @@ public class Home {
       return saleStatus;
     }
   }
+
+  //list home information
+  public String[] listHome(){
+    try{
+      String[] details = new String[7];
+      details[0] = "Square Feet: " + squareFeet;
+      details[1] = "Address: " + address;
+      details[2] = "City: " + city;
+      details[3] = "State: " + state;
+      details[4] = "Zip Code: " + zipCode;
+      details[5] = "Model: " + modelName;
+      details[6] = "Sale Status: " + saleStatus;
+      return details;
+    } catch(Exception e){
+      String[] error = new String[1];
+      error[0] = "Error: could not list home information";
+      return error;
+    }
+  }
 }
