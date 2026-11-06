@@ -44,4 +44,28 @@ public class HomeInventory{
     }
   }
 
+  //list all homes
+
+  public String listHomes(){
+    try{
+      if(homes.isEmpty()){
+        return "No homes in inventory";
+      }
+      for(Home home : homes){
+        String[] details = home.listHome();
+        for(String line : details){
+          System.out.println(line);
+        }
+        System.out.println("--------------------");
+      }
+      return "Listed " + homes.size() + " home(s).";
+    }catch(Exception e){
+      return "Error: could not list homes.";
+    }
+  }
+  
+  //save homes to a file
+
+
+
 }
