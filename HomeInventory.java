@@ -29,4 +29,19 @@ public class HomeInventory{
       return "Error: could not remove home";
     }
   }
+
+  //update a homes sale status
+  public String updateHome(String address, int zipCode, String newSaleStatus){
+    try{
+      for(Home home : homes){
+        if(home.getAddress().equals(address) && home.getZipCode() == zipCode){
+          return home.setSaleStatus(newSaleStatus);
+        }
+      }
+      return "Home not found. No Matching address and zip code.";
+    } catch(Exception e ){
+      return "Error: could not update home.";
+    }
+  }
+
 }
