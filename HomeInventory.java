@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
 
 public class HomeInventory{
   private ArrayList<Home> homes = new ArrayList<Home>();
@@ -66,6 +69,20 @@ public class HomeInventory{
   
   //save homes to a file
 
-
+  public String saveToFile(){
+    String filePath = "/tmp/Home.txt";
+    try(PrintWriter writer = new PrintWriter(new FileWriter(filePath))) {
+      for(Home home : homes){
+        String[] details = home.listHome();
+        for(String line : details) {
+          writer.println(line);
+        }
+         writer.println("--------------------");
+      }
+      return "Inventory saved to " + filePath + " .";
+    } catch(IOException e){
+      return "Error: could not write to file";
+    }
+  }
 
 }
