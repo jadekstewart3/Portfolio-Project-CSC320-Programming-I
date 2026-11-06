@@ -37,7 +37,7 @@ public class Home {
 
   public String setSaleStatus(String newStatus){
     try{
-      if("sold".equals(newStatus) || "available".equals(newStatus) || "undercontract".equals(newStatus)){
+      if("sold".equals(newStatus) || "available".equals(newStatus) || "under contract".equals(newStatus)){
           saleStatus = newStatus;
           System.out.print("Sale status updated to " + newStatus + ".");
           return saleStatus;

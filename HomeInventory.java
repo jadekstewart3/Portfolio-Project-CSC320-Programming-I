@@ -150,7 +150,7 @@ public class HomeInventory{
           zipCode = Integer.parseInt(scnr.nextLine().trim());
 
           System.out.println("Enter new sale status (sold, available, under contract): ");
-          saleStatus = scnr.nextLine().trim();
+          saleStatus = scnr.nextLine().trim().toLowerCase();
 
           System.out.println(updateHome(address, zipCode, saleStatus));
         } else if("4".equals(userInput)){
