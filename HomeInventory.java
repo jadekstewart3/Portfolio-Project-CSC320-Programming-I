@@ -14,5 +14,19 @@ public class HomeInventory{
        return "Error: could not add home";
     }
   }
-  
+  //remove home
+
+  public String removeHome(String address, int zipCode){
+    try{
+      for(Home home : homes){
+        if(home.getAddress().equals(address) && home.getZipCode() == zipCode){
+          homes.remove(home);
+          return "Home at " + address + " removed successfully";
+        }
+      }
+      return "Home not found. No matching address and zip code.";
+    } catch(Exception e){
+      return "Error: could not remove home";
+    }
+  }
 }
